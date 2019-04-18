@@ -55,9 +55,13 @@ class Pbkdf2Test extends TestCase
         $this->expectException(PasswordNeedsRehashException::class);
         $pbkdf2 = new Pbkdf2([
             'algo' => 'sha512',
-            'salt' => 'Kooser'
+            'salt' => 'KooserA'
         ], \true);
         $hash = $pbkdf2->compute('Hello World!');
+        $pbkdf2 = new Pbkdf2([
+            'algo' => 'sha512',
+            'salt' => 'KooserB'
+        ], \true);
         $pbkdf2->needsRehash('Hello World!', $hash);
     }
 
