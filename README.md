@@ -56,11 +56,9 @@ $needsRehash = $argon2i->needsRehash($hash);
 var_dump($needsRehash);
 ```
 
-### Injectable Hasher
+### Hash Info
 
-Every hasher can be injected into a dependency container.
-
-> This makes it easy because you do not have to call a new hasher on every class.
+Every hasher also comes with the `getInfo` method to get information on a hash.
 
 ## Contributing
 
