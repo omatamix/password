@@ -1,0 +1,24 @@
+{
+    "name": "kooser/password-lock",
+    "description": "Secure your password using password lock.",
+    "homepage": "https://kooser6.github.io/PasswordLock/",
+    "keywords": [],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3"
+        "symfony/options-resolver": "^4.2"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^3",
+        "phpunit/phpunit": "^8.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kooser\\PasswordLock\\": "./src"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    },
+    "prefer-stable": true
+}
