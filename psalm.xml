@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<psalm name="Kooser6/PasswordLock Psalm Configuration" useDocblockTypes="true">
+    <projectFiles>
+        <directory name="./src" />
+    </projectFiles>
+    <issueHandlers>
+        <MixedOperand errorLevel="suppress" />
+        <MixedArgument errorLevel="suppress" />
+    </issueHandlers>
+</psalm>
