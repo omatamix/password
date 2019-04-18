@@ -29,25 +29,29 @@ It is very easy to use a hasher.
 // Composer autoload.
 require_once __DIR__ . '/vendor/autoload.php';
 
-$bcrypt1 = new Kooser\PasswordLock\Bcrypt([
+// Construct bcrypt hasher.
+$bcrypt = new Kooser\PasswordLock\Bcrypt([
     'cost' => 10,
 ], false);
 
+// Define our password.
 $password = 'Kooser';
 
-$hash = $bcrypt1->compute($password);
+// Compute a new password.
+$hash = $bcrypt->compute($password);
 
 var_dump($hash);
 
+// Check to see if the password matches the hash.
 $verified = $bcrypt1->verify($password, $hash);
 
 var_dump($verified);
 
-$bcrypt2 = new Kooser\PasswordLock\Bcrypt([
-    'cost' => 15,
-], false);
+// Construct argon2i hasher
+$argon2i = new Kooser\PasswordLock\Argon2i([], false);
 
-$needsRehash = $bcrypt2->needsRehash($hash);
+// Check to see if the bcrypt hash needs to be rehashed to an argon2i hash.
+$needsRehash = $argon2i->needsRehash($hash);
 
 var_dump($needsRehash);
 ```
