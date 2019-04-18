@@ -102,9 +102,9 @@ class Argon2i extends AbstractLock implements LockInterface
                 return $result;
             }
             return \password_needs_rehash($hash, \PASSWORD_ARGON2I, $this->options);
-        } elseif (is_pbkdf2($hash)) {
+        } elseif (\is_pbkdf2($hash)) {
             throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
-        } elseif ($needsRehash = password_needs_rehash($hash, \PASSWORD_ARGON2I, $this->options)) {
+        } elseif ($needsRehash = \password_needs_rehash($hash, \PASSWORD_ARGON2I, $this->options)) {
             throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
         } else {
             return (bool) $needsRehash;
