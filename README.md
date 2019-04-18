@@ -17,18 +17,46 @@ composer require kooser/password-lock
 
 ## Usage
 
-### Injectable Hasher
+### Basic Usage
 
-Every hasher can be injected into a dependency container to excel web development.
+It is very easy to use a hasher.
+
+> When using the pbkdf2 hasher you must also provide the password on the `needsRehash` method.
 
 ```php
-<?php
-// Create the container.
-$container = Container();
+<?php declare(strict_types=1);
 
-// Add the bcrypt hasher.
-$container['bcrypt_hasher'] = Kooser\PasswordLock\Bcrypt();
+// Composer autoload.
+require_once __DIR__ . '/vendor/autoload.php';
+
+$bcrypt1 = new Kooser\PasswordLock\Bcrypt([
+    'cost' => 10,
+], false);
+
+$password = 'Kooser';
+
+$hash = $bcrypt1->compute($password);
+
+var_dump($hash);
+
+$verified = $bcrypt1->verify($password, $hash);
+
+var_dump($verified);
+
+$bcrypt2 = new Kooser\PasswordLock\Bcrypt([
+    'cost' => 15,
+], false);
+
+$needsRehash = $bcrypt2->needsRehash($hash);
+
+var_dump($needsRehash);
 ```
+
+### Injectable Hasher
+
+Every hasher can be injected into a dependency container.
+
+> This makes it easy because you do not have to call a new hasher on every class.
 
 ## Contributing
 
