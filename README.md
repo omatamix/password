@@ -15,6 +15,26 @@ The best way to install this php component is through composer. If you do not ha
 composer require kooser/password-lock
 ```
 
+## Usage
+
+### Injectable Hasher
+
+Every hasher can be injected into a dependency container to excel web development.
+
+```php
+use Kooser\PasswordLock\Bcrypt;
+use Kooser\PasswordLock\Argon2i;
+
+// Create the container.
+$container = Container();
+
+// Add the bcrypt hasher.
+$container['bcrypt_hasher'] = Bcrypt();
+
+// Add the argon2i hasher.
+$container['argon2i_hasher'] = Argon2i();
+```
+
 ## Contributing
 
 All contributions are welcome! If you wish to contribute.
