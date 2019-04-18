@@ -62,7 +62,7 @@ class MixTest extends TestCase
      */
     public function testMixArgon2id(): void
     {
-        $this->expectException(PasswordNeedsRehash::class);
+        $this->expectException(PasswordNeedsRehashException::class);
         $pbkdf2 = new Pbkdf2([
             'algo' => 'sha512',
             'salt' => 'Kooser'
@@ -77,7 +77,7 @@ class MixTest extends TestCase
      */
     public function testMixBcrypt(): void
     {
-        $this->expectException(PasswordNeedsRehash::class);
+        $this->expectException(PasswordNeedsRehashException::class);
         $pbkdf2 = new Pbkdf2([
             'algo' => 'sha512',
             'salt' => 'Kooser'
