@@ -14,3 +14,11 @@ The best way to install this php component is through composer. If you do not ha
 ```sh
 composer require kooser/password-lock
 ```
+
+## Contributing
+
+All contributions are welcome! If you wish to contribute.
+
+## License
+
+This project is licensed under the terms of the [MIT License](https://opensource.org/licenses/MIT).
