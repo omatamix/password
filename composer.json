@@ -15,7 +15,10 @@
     "autoload": {
         "psr-4": {
             "Kooser\\PasswordLock\\": "./src"
-        }
+        },
+        "files": [
+            "./lib/bootstrap.php"
+        ]
     },
     "config": {
         "optimize-autoloader": true
