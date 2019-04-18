@@ -124,5 +124,8 @@ class Argon2id extends AbstractLock implements LockInterface
             'time_cost'   => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
             'threads'     => \PASSWORD_ARGON2_DEFAULT_THREADS,
         ]);
+        $resolver->setAllowedTypes('memory_cost', 'int');
+        $resolver->setAllowedTypes('time_cost', 'int');
+        $resolver->setAllowedTypes('threads', 'int');
     }
 }
