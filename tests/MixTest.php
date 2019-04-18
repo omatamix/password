@@ -11,7 +11,7 @@ namespace PasswordLock\Test;
 use Kooser\PasswordLock\Argon2i;
 use Kooser\PasswordLock\Argon2id;
 use Kooser\PasswordLock\Bcrypt;
-use Kooser\PasswordLock\Exception\PasswordNeedsRehash\Exception;
+use Kooser\PasswordLock\Exception\PasswordNeedsRehashException;
 use Kooser\PasswordLock\Pbkdf2;
 
 use PHPUnit\Framework\TestCase;
