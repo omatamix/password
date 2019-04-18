@@ -1,0 +1,37 @@
+    
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.1/phpunit.xsd"
+         backupGlobals="true"
+         backupStaticAttributes="false"
+         bootstrap="./vendor/autoload.php"
+         cacheResult="false"
+         cacheTokens="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         forceCoversAnnotation="false"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         stopOnRisky="false"
+         timeoutForSmallTests="5"
+         timeoutForMediumTests="10"
+         timeoutForLargeTests="15"
+         verbose="false">
+    <testsuites>
+        <testsuite name="Kooser6/PasswordLock Test Suite">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="clover.xml" />
+    </logging>
+</phpunit>
