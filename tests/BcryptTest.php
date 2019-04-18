@@ -14,6 +14,7 @@ use Kooser\PasswordLock\Exception\PasswordNeedsRehashException;
 use Kooser\PasswordLock\Exception\PasswordNotVerifiedException;
 
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Error\Error;
 
 /**
  * Test bcrypt functionality.
@@ -100,12 +101,11 @@ class BcryptTest extends TestCase
     }
 
     /**
-     * @expectedException PHPUnit\Framework\Error\Error
-     *
      * @return void Returns nothing.
      */
     public function testBcryptHashInvalidPasswordError(): void
     {
+        $this->expectException(Error::class);
         $options = ['cost' => 10];
         $bcrypt = new Bcrypt($options, \false);
         $hash = $bcrypt->compute('WWEPt2AEjqqM?DeSV&SXcU=t*^D5Bte#E*R8c3-_kq!bBU$ahjgJFL+Q=2gG?#QqkwzS?qwbs');
