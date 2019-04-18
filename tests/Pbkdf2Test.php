@@ -1,22 +1,17 @@
 <?php
 declare(strict_types=1);
 /**
- * PasswordLock - Secure your password using password lock.
- *
- * @author Nicholas English <https://github.com/bonvil>.
- * @license A short and simple permissive license with conditions only requiring preservation of copyright and license notices.
- *          Licensed works, modifications, and larger works may be distributed under different terms and without source code.
- *
- * @link <https://github.com/razephp/password-lock/blob/master/LICENSE> MIT License.
- * @link <https://github.com/razephp/password-lock> Source.
+ * Kooser PasswordLock - Secure your password using password lock.
+ * 
+ * @package Kooser\PasswordLock.
  */
+
 namespace PasswordLock\Test;
-use PasswordLock\Exception\PasswordNeedsRehash;
-use PasswordLock\Exception\PasswordNotVerified;
-use PasswordLock\Pbkdf2;
-use PHPUnit\Framework\TestCase;
-use const false;
-use const true;
+
+use Kooser\PasswordLock\Pbkdf2;
+use Kooser\PasswordLock\Exception\PasswordNeedsRehash;
+use Kooser\PasswordLock\Exception\PasswordNotVerified;
+
 /**
  * Test pbkdf2 functionality.
  */
