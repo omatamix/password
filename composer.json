@@ -17,7 +17,7 @@
             "Kooser\\PasswordLock\\": "./src"
         },
         "files": [
-            "./lib/bootstrap.php"
+            "./bootstrap.php"
         ]
     },
     "config": {
