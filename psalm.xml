@@ -6,5 +6,7 @@
     <issueHandlers>
         <MixedOperand errorLevel="suppress" />
         <MixedArgument errorLevel="suppress" />
+        <InvalidNullableReturnType errorLevel="suppress" />
+        <NullableReturnStatement errorLevel="suppress" />
     </issueHandlers>
 </psalm>
