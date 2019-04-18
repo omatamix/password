@@ -43,7 +43,7 @@ $hash = $bcrypt->compute($password);
 var_dump($hash);
 
 // Check to see if the password matches the hash.
-$verified = $bcrypt1->verify($password, $hash);
+$verified = $bcrypt->verify($password, $hash);
 
 var_dump($verified);
 
