@@ -6,6 +6,8 @@ declare(strict_types=1);
  * @package Kooser\PasswordLock.
  */
 
+defined('PASSWORD_PBKDF2') || define('PASSWORD_PBKDF2', 5506);
+
 /**
  * Determine if the hash is pbkdf2.
  *
