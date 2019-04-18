@@ -1,4 +1,4 @@
-![Travis (.org) branch](https://img.shields.io/travis/kooser/password-lock/master.svg?style=flat-square)
+![Travis (.org) branch](https://img.shields.io/travis/Kooser6/PasswordLock/master.svg?style=flat-square)
 ![Coveralls github branch](https://img.shields.io/coveralls/github/Kooser6/PasswordLock/master.svg?style=flat-square)
 
 # PasswordLock
