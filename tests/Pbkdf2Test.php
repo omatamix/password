@@ -12,6 +12,8 @@ use Kooser\PasswordLock\Pbkdf2;
 use Kooser\PasswordLock\Exception\PasswordNeedsRehash;
 use Kooser\PasswordLock\Exception\PasswordNotVerified;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * Test pbkdf2 functionality.
  */
