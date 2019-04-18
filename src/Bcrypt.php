@@ -130,5 +130,6 @@ class Bcrypt extends AbstractLock implements LockInterface
         $resolver->setDefaults([
             'cost' => 10,
         ]);
+        $resolver->setAllowedTypes('cost', 'int');
     }
 }
