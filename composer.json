@@ -7,8 +7,9 @@
     "require": {
         "php": ">=7.3",
         "symfony/options-resolver": "^4.2",
-        "symfony/polyfill-php72": "^1.10",
-        "symfony/polyfill-php73": "^1.10"
+        "symfony/polyfill-mbstring": "^1.11",
+        "symfony/polyfill-php72": "^1.11",
+        "symfony/polyfill-php73": "^1.11"
     },
     "require-dev": {
         "vimeo/psalm": "^3",
