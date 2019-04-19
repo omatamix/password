@@ -67,7 +67,9 @@ class Bcrypt extends AbstractLock implements LockInterface
             throw new Exception\PasswordInvalidException('The password supplied is invalid. The max length for a password using bcrypt is 72.');
         } else {
             return \password_hash($password, \PASSWORD_BCRYPT, $this->options);
+            // @codeCoverageIgnoreStart
         }
+        // @codeCoverageIgnoreEnd
     }
 
     /**
