@@ -58,6 +58,8 @@ class Bcrypt extends AbstractLock implements LockInterface
      * @throws PasswordInvalidException If the password supplied is invalid.
      *
      * @return string Returns the password hashed.
+     *
+     * @codeCoverageIgnore
      */
     public function compute(string $password): string
     {
@@ -67,9 +69,7 @@ class Bcrypt extends AbstractLock implements LockInterface
             throw new Exception\PasswordInvalidException('The password supplied is invalid. The max length for a password using bcrypt is 72.');
         } else {
             return \password_hash($password, \PASSWORD_BCRYPT, $this->options);
-            // @codeCoverageIgnoreStart
         }
-        // @codeCoverageIgnoreEnd
     }
 
     /**
