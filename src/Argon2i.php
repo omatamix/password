@@ -41,13 +41,14 @@ class Argon2i extends AbstractLock implements LockInterface
      *
      * @param array $options The argon2i hasher options.
      *
-     * @return void Returns nothing.
+     * @return \Kooser\PasswordLock\LockInterface Returns the hasher.
      */
-    public function setOptions(array $options = []): void
+    public function setOptions(array $options = []): LockInterface
     {
         $resolver = new OptionsResolver();
         $this->configureOptions($resolver);
         $this->options = $resolver->resolve($options);
+        return $this;
     }
 
     /**
@@ -55,11 +56,12 @@ class Argon2i extends AbstractLock implements LockInterface
      *
      * @param bool $exceptions Should we utilize exceptions.
      *
-     * @return void Returns nothing.
+     * @return \Kooser\PasswordLock\LockInterface Returns the hasher.
      */
-    public function setExceptions(bool $exceptions = \true): void
+    public function setExceptions(bool $exceptions = \true): LockInterface
     {
         $this->exceptions = $exceptions;
+        return $this;
     }
 
     /**
