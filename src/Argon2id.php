@@ -32,7 +32,7 @@ class Argon2id extends AbstractLock implements LockInterface
      */
     public function __construct(array $options = [], bool $exceptions = \true)
     {
-        $this->exceptions = $exceptions;
+        $this->setExceptions($exceptions);
         $this->setOptions($options);
     }
 
