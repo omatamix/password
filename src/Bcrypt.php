@@ -51,6 +51,18 @@ class Bcrypt extends AbstractLock implements LockInterface
     }
 
     /**
+     * Set the exceptions param.
+     *
+     * @param bool $exceptions Should we utilize exceptions.
+     *
+     * @return void Returns nothing.
+     */
+    public function setExceptions(bool $exceptions = \true): void
+    {
+        $this->exceptions = $exceptions;
+    }
+
+    /**
      * Compute a new hash.
      *
      * @param string $password The password to hash.
