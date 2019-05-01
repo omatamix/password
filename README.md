@@ -17,7 +17,38 @@ composer require kooser/password-lock
 
 ## Usage
 
-> Nothing here yet.
+### Basic usage
+
+Using the hashers are very easy. Here is an example below.
+
+
+```php
+<?php
+
+use Kooser\PasswordLock\Argon2id;
+
+// Require the composer autoloader.
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Define our argon2i hasher
+// Avaliable hashers:
+// `Argon2i`, `Argon2id`, `Bcrypt`, and `Pbkdf2`.
+$hasher = new Argon2id();
+
+// Define our password.
+$password = 'Hello World!';
+
+// Compute a new hash.
+$hash = $hasher->compute($password);
+var_dump($hash);
+
+// Verify the hash. 
+var_dump($hasher->verify($password, $hash));
+
+// Verify if the password needs a rehash.
+var_dump($hasher->needsRehash($hash));
+
+```
 
 ## Contributing
 
