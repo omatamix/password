@@ -13,7 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * Hash the password using the crypt blowfish algorithm.
  */
-class Bcrypt extends AbstractLock implements LockInterface
+final class Bcrypt extends AbstractLock implements LockInterface
 {
 
     /** @var array $options The bcrypt hasher options. */
