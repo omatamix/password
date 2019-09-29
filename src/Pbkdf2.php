@@ -69,7 +69,7 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
      *
      * @param string $password The password to hash.
      *
-     * @throws PasswordInvalid If the password supplied is invalid.
+     * @throws Exception\PasswordInvalidException If the password supplied is invalid.
      *
      * @return string Returns the password hashed.
      */
