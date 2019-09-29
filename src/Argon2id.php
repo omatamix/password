@@ -13,7 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * Hash the password using the argon2id algorithm.
  */
-class Argon2id extends AbstractLock implements LockInterface
+final class Argon2id extends AbstractLock implements LockInterface
 {
 
     /** @var array $options The bcrypt hasher options. */
