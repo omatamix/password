@@ -20,7 +20,7 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     private $options = [];
 
     /** @var bool $exceptions Should we utilize exceptions. */
-    private $exceptions = \true;
+    protected $exceptions = \true;
 
     /**
      * Construct a new pbkdf2 hasher.
