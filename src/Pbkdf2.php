@@ -13,7 +13,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 /**
  * Hash the password using the pbkdf2 algorithm.
  */
-class Pbkdf2 extends AbstractLock implements LockInterface
+final class Pbkdf2 extends AbstractLock implements LockInterface
 {
 
     /** @var array $options The pbkdf2 hasher options. */
