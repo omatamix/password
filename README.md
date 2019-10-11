@@ -1,5 +1,5 @@
-[![Travis (.org) branch](https://img.shields.io/travis/kooser-framework/password-lock/master.svg)](https://travis-ci.org/kooser-framework/password-lock)
-[![Coveralls github branch](https://img.shields.io/coveralls/github/kooser-framework/password-lock/master.svg)](https://coveralls.io/github/kooser-framework/password-lock?branch=master)
+[![Build Status](https://travis-ci.org/kooser-framework/password-lock.svg?branch=master)](https://travis-ci.org/kooser-framework/password-lock)
+[![Coverage Status](https://coveralls.io/repos/github/kooser-framework/password-lock/badge.svg?branch=master)](https://coveralls.io/github/kooser-framework/password-lock?branch=master)
 
 # PasswordLock
 
