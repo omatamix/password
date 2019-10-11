@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace PasswordLock\Test;
 
-use Kooser\PasswordLock\Argon2id;
-use Kooser\PasswordLock\Exception\PasswordNeedsRehashException;
-use Kooser\PasswordLock\Exception\PasswordNotVerifiedException;
+use Kooser\Framework\PasswordLock\Argon2id;
+use Kooser\Framework\PasswordLock\Exception\PasswordNeedsRehashException;
+use Kooser\Framework\PasswordLock\Exception\PasswordNotVerifiedException;
 
 use PHPUnit\Framework\TestCase;
 
