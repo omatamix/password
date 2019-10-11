@@ -3,10 +3,10 @@ declare(strict_types=1);
 /**
  * Kooser PasswordLock - Secure your password using password lock.
  * 
- * @package Kooser\PasswordLock.
+ * @package Kooser\Framework\PasswordLock.
  */
 
-namespace Kooser\PasswordLock\Exception;
+namespace Kooser\Framework\PasswordLock\Exception;
 
 use Throwable;
 
