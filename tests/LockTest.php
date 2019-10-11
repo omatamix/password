@@ -8,8 +8,8 @@ declare(strict_types=1);
 
 namespace PasswordLock\Test;
 
-use Kooser\PasswordLock\Bcrypt;
-use Kooser\PasswordLock\Pbkdf2;
+use Kooser\Framework\PasswordLock\Bcrypt;
+use Kooser\Framework\PasswordLock\Pbkdf2;
 
 use PHPUnit\Framework\TestCase;
 
