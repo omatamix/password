@@ -29,7 +29,7 @@ interface LockInterface
      *
      * @param array $options The hasher options.
      *
-     * @return \Kooser\PasswordLock\LockInterface Returns the hasher.
+     * @return \Kooser\Framework\PasswordLock\LockInterface Returns the hasher.
      */
     public function setOptions(array $options = []): LockInterface;
 
@@ -38,7 +38,7 @@ interface LockInterface
      *
      * @param bool $exceptions Should we utilize exceptions.
      *
-     * @return \Kooser\PasswordLock\LockInterface Returns the hasher.
+     * @return \Kooser\Framework\PasswordLock\LockInterface Returns the hasher.
      */
     public function setExceptions(bool $exceptions = \true): LockInterface;
 
