@@ -1,7 +1,7 @@
 {
     "name": "kooser/password-lock",
     "description": "Secure your password using password lock.",
-    "homepage": "https://kooser6.github.io/PasswordLock/",
+    "homepage": "https://kooser-framework.github.io/password-lock/",
     "keywords": [],
     "license": "MIT",
     "require": {
