@@ -8,11 +8,11 @@ declare(strict_types=1);
 
 namespace PasswordLock\Test;
 
-use Kooser\PasswordLock\Argon2i;
-use Kooser\PasswordLock\Argon2id;
-use Kooser\PasswordLock\Bcrypt;
-use Kooser\PasswordLock\Exception\PasswordNeedsRehashException;
-use Kooser\PasswordLock\Pbkdf2;
+use Kooser\Framework\PasswordLock\Argon2i;
+use Kooser\Framework\PasswordLock\Argon2id;
+use Kooser\Framework\PasswordLock\Bcrypt;
+use Kooser\Framework\PasswordLock\Exception\PasswordNeedsRehashException;
+use Kooser\Framework\PasswordLock\Pbkdf2;
 
 use PHPUnit\Framework\TestCase;
 
