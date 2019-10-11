@@ -3,10 +3,10 @@ declare(strict_types=1);
 /**
  * Kooser PasswordLock - Secure your password using password lock.
  * 
- * @package Kooser\PasswordLock.
+ * @package Kooser\Framework\PasswordLock.
  */
 
-namespace Kooser\PasswordLock;
+namespace Kooser\Framework\PasswordLock;
 
 /**
  * The hasher interface.
