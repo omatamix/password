@@ -8,9 +8,9 @@ declare(strict_types=1);
 
 namespace PasswordLock\Test;
 
-use Kooser\PasswordLock\Pbkdf2;
-use Kooser\PasswordLock\Exception\PasswordNeedsRehashException;
-use Kooser\PasswordLock\Exception\PasswordNotVerifiedException;
+use Kooser\Framework\PasswordLock\Pbkdf2;
+use Kooser\Framework\PasswordLock\Exception\PasswordNeedsRehashException;
+use Kooser\Framework\PasswordLock\Exception\PasswordNotVerifiedException;
 
 use PHPUnit\Framework\TestCase;
 
