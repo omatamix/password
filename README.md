@@ -12,7 +12,7 @@ via Composer:
 The best way to install this php component is through composer. If you do not have composer installed you can install it directly from the [composer website](https://getcomposer.org/). After composer is successfully installed run the command line code below.
 
 ```sh
-composer require kooser/password-lock
+composer require kooser-framework/password-lock
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ Using the hashers are very easy. Here is an example below.
 ```php
 <?php
 
-use Kooser\PasswordLock\Argon2id;
+use Kooser\Framework\PasswordLock\Argon2id;
 
 // Require the composer autoloader.
 require_once __DIR__ . '/vendor/autoload.php';
