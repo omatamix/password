@@ -26,7 +26,7 @@ declare(strict_types=1);
  * @package Commander-Ant-Screwbin-Games/password-lock.
  */
 
-namespace KPasswordLock;
+namespace PasswordLock;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
