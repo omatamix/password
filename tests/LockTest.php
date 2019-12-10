@@ -1,15 +1,10 @@
 <?php
 declare(strict_types=1);
-/**
- * Kooser PasswordLock - Secure your password using password lock.
- * 
- * @package Kooser\PasswordLock.
- */
 
 namespace PasswordLock\Test;
 
-use Kooser\Framework\PasswordLock\Bcrypt;
-use Kooser\Framework\PasswordLock\Pbkdf2;
+use PasswordLock\Bcrypt;
+use PasswordLock\Pbkdf2;
 
 use PHPUnit\Framework\TestCase;
 
