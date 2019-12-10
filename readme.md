@@ -1,7 +1,7 @@
 # PasswordLock
 
-[![Build Status](https://travis-ci.org/kooser-framework/password-lock.svg?branch=master)](https://travis-ci.org/kooser-framework/password-lock)
-[![Coverage Status](https://coveralls.io/repos/github/kooser-framework/password-lock/badge.svg?branch=master)](https://coveralls.io/github/kooser-framework/password-lock?branch=master)
+[![Build Status](https://travis-ci.org/Commander-Ant-Screwbin-Games/password-lock.svg?branch=master)](https://travis-ci.org/Commander-Ant-Screwbin-Games/password-lock)
+[![Coverage Status](https://coveralls.io/repos/github/Commander-Ant-Screwbin-Games/password-lock/badge.svg?branch=master)](https://coveralls.io/github/Commander-Ant-Screwbin-Games/password-lock?branch=master)
 
 ## Installation
 
