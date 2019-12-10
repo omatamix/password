@@ -21,7 +21,7 @@
          timeoutForLargeTests="15"
          verbose="false">
     <testsuites>
-        <testsuite name="Kooser6/PasswordLock Test Suite">
+        <testsuite name="PasswordLock Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
