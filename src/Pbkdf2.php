@@ -100,6 +100,7 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     {
         return '$pbkdf2$' . hash_pbkdf2($this->options['algo'], $password, $this->options['salt'], $this->options['iterations']);
     }
+
     /**
      * Verify the password matches the given hash.
      *
