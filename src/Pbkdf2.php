@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 /**
  * PasswordLock - Secure your password using password lock.
  *
@@ -29,6 +28,10 @@ declare(strict_types=1);
 namespace PasswordLock;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
+use function hash_equals;
+use function hash_pbkdf2;
+use function is_pbkdf2;
 
 /**
  * Hash the password using the pbkdf2 algorithm.
@@ -95,7 +98,7 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
      */
     public function compute(string $password): string
     {
-        return '$pbkdf2$' . \hash_pbkdf2($this->options['algo'], $password, $this->options['salt'], $this->options['iterations']);
+        return '$pbkdf2$' . hash_pbkdf2($this->options['algo'], $password, $this->options['salt'], $this->options['iterations']);
     }
     /**
      * Verify the password matches the given hash.
@@ -111,8 +114,8 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     public function verify(string $password, string $hash): bool
     {
         if (!$this->exceptions) {
-            return \hash_equals($this->compute($password), $hash);
-        } elseif ($verified = \hash_equals($this->compute($password), $hash)) {
+            return hash_equals($this->compute($password), $hash);
+        } elseif ($verified = hash_equals($this->compute($password), $hash)) {
             return (bool) $verified;
         } else {
             throw new Exception\PasswordNotVerifiedException('The password supplied is not verified.');
@@ -133,10 +136,10 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     public function needsRehash(string $password, string $hash): bool
     {
         $testHash = $this->compute($password);
-        $res = \hash_equals($testHash, $hash);
+        $res = hash_equals($testHash, $hash);
         if (!$this->exceptions) {
-            return !(\is_pbkdf2($hash) && $res);
-        } elseif ($needsRehash = !(\is_pbkdf2($hash) && $res)) {
+            return !(is_pbkdf2($hash) && $res);
+        } elseif ($needsRehash = !(is_pbkdf2($hash) && $res)) {
             throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
         } else {
             return (bool) $needsRehash;
