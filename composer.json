@@ -1,15 +1,15 @@
 {
-    "name": "kooser/password-lock",
+    "name": "commander-ant-screwbin-games/password-lock",
     "description": "Secure your password using password lock.",
-    "homepage": "https://kooser-framework.github.io/password-lock/",
+    "homepage": "https://github.com/Commander-Ant-Screwbin-Games",
     "keywords": [],
     "license": "MIT",
     "require": {
         "php": ">=7.3",
-        "symfony/options-resolver": "^4.3",
-        "symfony/polyfill-mbstring": "^1.12",
-        "symfony/polyfill-php72": "^1.12",
-        "symfony/polyfill-php73": "^1.12"
+        "symfony/options-resolver": "^5,.0,
+        "symfony/polyfill-mbstring": "^1.13",
+        "symfony/polyfill-php72": "^1.13",
+        "symfony/polyfill-php73": "^1.13"
     },
     "require-dev": {
         "vimeo/psalm": "^3",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Kooser\\Framework\\PasswordLock\\": "./src"
+            "PasswordLock\\": "./src"
         },
         "files": [
             "./bootstrap.php"
