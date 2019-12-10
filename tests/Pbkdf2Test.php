@@ -1,16 +1,11 @@
 <?php
 declare(strict_types=1);
-/**
- * Kooser PasswordLock - Secure your password using password lock.
- * 
- * @package Kooser\PasswordLock.
- */
 
 namespace PasswordLock\Test;
 
-use Kooser\Framework\PasswordLock\Pbkdf2;
-use Kooser\Framework\PasswordLock\Exception\PasswordNeedsRehashException;
-use Kooser\Framework\PasswordLock\Exception\PasswordNotVerifiedException;
+use PasswordLock\Pbkdf2;
+use PasswordLock\Exception\PasswordNeedsRehashException;
+use PasswordLock\Exception\PasswordNotVerifiedException;
 
 use PHPUnit\Framework\TestCase;
 
