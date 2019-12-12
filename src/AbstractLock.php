@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 /**
  * PasswordLock - Secure your password using password lock.
  *
@@ -28,6 +27,9 @@ declare(strict_types=1);
 
 namespace PasswordLock;
 
+use function is_pbkdf2;
+use function password_get_info;
+
 /**
  * Any extra functions.
  */
@@ -42,14 +44,14 @@ abstract class AbstractLock
      */
     public function getInfo(string $hash): array
     {
-        if (\is_pbkdf2($hash)) {
+        if (is_pbkdf2($hash)) {
             return [
-                'algo'     => \PASSWORD_PBKDF2,
+                'algo'     => PASSWORD_PBKDF2,
                 'algoName' => 'pbkdf2',
                 'options'  => ['[%secret%]'],
             ];
         }
-        $info = \password_get_info($hash);
+        $info = password_get_info($hash);
         unset($info['options']);
         $info['options'] = ['[%secret%]'];
         return $info;
