@@ -1,5 +1,4 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 /**
  * PasswordLock - Secure your password using password lock.
  *
@@ -30,6 +29,11 @@ namespace PasswordLock;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use function is_pbkdf2;
+use function password_hash;
+use function password_needs_rehash;
+use function password_verify;
+
 /**
  * Hash the password using the argon2id algorithm.
  */
@@ -40,7 +44,7 @@ final class Argon2id extends AbstractLock implements LockInterface
     private $options = [];
 
     /** @var bool $exceptions Should we utilize exceptions. */
-    protected $exceptions = \true;
+    protected $exceptions = true;
 
     /**
      * Construct a new argon2id hasher.
@@ -50,7 +54,7 @@ final class Argon2id extends AbstractLock implements LockInterface
      *
      * @return void Returns nothing.
      */
-    public function __construct(array $options = [], bool $exceptions = \true)
+    public function __construct(array $options = [], bool $exceptions = true)
     {
         $this->setExceptions($exceptions);
         $this->setOptions($options);
@@ -78,7 +82,7 @@ final class Argon2id extends AbstractLock implements LockInterface
      *
      * @return \PasswordLock\LockInterface Returns the hasher.
      */
-    public function setExceptions(bool $exceptions = \true): LockInterface
+    public function setExceptions(bool $exceptions = true): LockInterface
     {
         $this->exceptions = $exceptions;
         return $this;
@@ -93,7 +97,7 @@ final class Argon2id extends AbstractLock implements LockInterface
      */
     public function compute(string $password): string
     {
-        return \password_hash($password, \PASSWORD_ARGON2ID, $this->options);
+        return password_hash($password, PASSWORD_ARGON2ID, $this->options);
     }
 
     /**
@@ -110,8 +114,8 @@ final class Argon2id extends AbstractLock implements LockInterface
     public function verify(string $password, string $hash): bool
     {
         if (!$this->exceptions) {
-            return \password_verify($password, $hash);
-        } elseif ($verified = \password_verify($password, $hash)) {
+            return password_verify($password, $hash);
+        } elseif ($verified = password_verify($password, $hash)) {
             return (bool) $verified;
         } else {
             throw new Exception\PasswordNotVerifiedException('The password supplied is not verified.');
@@ -131,11 +135,11 @@ final class Argon2id extends AbstractLock implements LockInterface
     public function needsRehash(string $hash): bool
     {
         if (!$this->exceptions) {
-            if ($result = \is_pbkdf2($hash)) {
+            if ($result = is_pbkdf2($hash)) {
                 return $result;
             }
-            return \password_needs_rehash($hash, \PASSWORD_ARGON2ID, $this->options);
-        } elseif (\is_pbkdf2($hash)) {
+            return password_needs_rehash($hash, PASSWORD_ARGON2ID, $this->options);
+        } elseif (is_pbkdf2($hash)) {
             throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
         } elseif ($needsRehash = \password_needs_rehash($hash, \PASSWORD_ARGON2ID, $this->options)) {
             throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
@@ -154,9 +158,9 @@ final class Argon2id extends AbstractLock implements LockInterface
     private function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'memory_cost' => \PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
-            'time_cost'   => \PASSWORD_ARGON2_DEFAULT_TIME_COST,
-            'threads'     => \PASSWORD_ARGON2_DEFAULT_THREADS,
+            'memory_cost' => PASSWORD_ARGON2_DEFAULT_MEMORY_COST,
+            'time_cost'   => PASSWORD_ARGON2_DEFAULT_TIME_COST,
+            'threads'     => PASSWORD_ARGON2_DEFAULT_THREADS,
         ]);
         $resolver->setAllowedTypes('memory_cost', 'int');
         $resolver->setAllowedTypes('time_cost', 'int');
