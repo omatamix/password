@@ -1,4 +1,4 @@
-## How to contribute to Password Lock
+# How to contribute to Password Lock
 
 ### **Did you find a bug or an error or have a new feature idea?**
 
