@@ -42,12 +42,7 @@ final class Argon2id extends AbstractLock implements LockInterface
     protected $exceptions = \true;
 
     /**
-     * Construct a new argon2id hasher.
-     *
-     * @param array $options    The argon2id hasher options.
-     * @param bool  $exceptions Should we utilize exceptions.
-     *
-     * @return void Returns nothing.
+     * {@inheritdoc}
      */
     public function __construct(array $options = [], bool $exceptions = \true)
     {
@@ -56,11 +51,7 @@ final class Argon2id extends AbstractLock implements LockInterface
     }
 
     /**
-     * Set the argon2id hasher options.
-     *
-     * @param array $options The argon2id hasher options.
-     *
-     * @return \PasswordLock\LockInterface Returns the hasher.
+     * {@inheritdoc}
      */
     public function setOptions(array $options = []): LockInterface
     {
@@ -71,11 +62,7 @@ final class Argon2id extends AbstractLock implements LockInterface
     }
 
     /**
-     * Set the exceptions param.
-     *
-     * @param bool $exceptions Should we utilize exceptions.
-     *
-     * @return \PasswordLock\LockInterface Returns the hasher.
+     * {@inheritdoc}
      */
     public function setExceptions(bool $exceptions = \true): LockInterface
     {
@@ -84,11 +71,7 @@ final class Argon2id extends AbstractLock implements LockInterface
     }
 
     /**
-     * Compute a new hash.
-     *
-     * @param string $password The password to hash.
-     *
-     * @return string Returns the password hashed.
+     * {@inheritdoc}
      */
     public function compute(string $password): string
     {
@@ -96,15 +79,10 @@ final class Argon2id extends AbstractLock implements LockInterface
     }
 
     /**
-     * Verify the password matches the given hash.
-     *
-     * @param string $password The password to verify.
-     * @param string $hash     The hash to verify against.
+     * {@inheritdoc}
      *
      * @throws Exception\PasswordNotVerifiedException If exceptions enabled throw this exception
      *                                                if the password is not verified.
-     *
-     * @return bool Returns true if the password is verified and false if not.
      */
     public function verify(string $password, string $hash): bool
     {
