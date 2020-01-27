@@ -16,6 +16,7 @@ composer require commander-ant-screwbin-games/password-lock
 ```
 
 ## Security Vulnerabilities
+
 If you discover a security vulnerability within Password Lock, please send an e-mail to Nicholas via [omatamix@gmail.com](mailto:omatamix@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## Contributing
