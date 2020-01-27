@@ -41,7 +41,7 @@ interface LockInterface
      *
      * @return void Returns nothing.
      */
-    public function __construct(array $options = [], bool $exceptions = true);
+    public function __construct(array $options = [], bool $exceptions = \true);
 
     /**
      * Set the hasher options.
@@ -59,7 +59,7 @@ interface LockInterface
      *
      * @return \PasswordLock\LockInterface Returns the hasher.
      */
-    public function setExceptions(bool $exceptions = true): LockInterface;
+    public function setExceptions(bool $exceptions = \true): LockInterface;
 
     /**
      * Compute a new hash.
