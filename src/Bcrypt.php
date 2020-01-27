@@ -29,13 +29,6 @@ namespace PasswordLock;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use function is_pbkdf2;
-use function mb_strlen;
-use function password_hash;
-use function password_needs_rehash;
-use function password_verify;
-use function trigger_error;
-
 /**
  * Hash the password using the crypt blowfish algorithm.
  */
@@ -46,7 +39,7 @@ final class Bcrypt extends AbstractLock implements LockInterface
     private $options = [];
 
     /** @var bool $exceptions Should we utilize exceptions. */
-    protected $exceptions = true;
+    protected $exceptions = \true;
 
     /**
      * Construct a new bcrypt hasher.
@@ -84,7 +77,7 @@ final class Bcrypt extends AbstractLock implements LockInterface
      *
      * @return \PasswordLock\LockInterface Returns the hasher.
      */
-    public function setExceptions(bool $exceptions = true): LockInterface
+    public function setExceptions(bool $exceptions = \true): LockInterface
     {
         $this->exceptions = $exceptions;
         return $this;
@@ -103,12 +96,12 @@ final class Bcrypt extends AbstractLock implements LockInterface
      */
     public function compute(string $password): string
     {
-        if (!$this->exceptions && mb_strlen($password) > 72) {
-            trigger_error('The password supplied is invalid. The max length for a password using bcrypt is 72.', E_USER_ERROR);
-        } elseif (mb_strlen($password) > 72) {
+        if (!$this->exceptions && \mb_strlen($password) > 72) {
+            \trigger_error('The password supplied is invalid. The max length for a password using bcrypt is 72.', E_USER_ERROR);
+        } elseif (\mb_strlen($password) > 72) {
             throw new Exception\PasswordInvalidException('The password supplied is invalid. The max length for a password using bcrypt is 72.');
         } else {
-            return password_hash($password, PASSWORD_BCRYPT, $this->options);
+            return \password_hash($password, \PASSWORD_BCRYPT, $this->options);
         }
     }
 
@@ -126,8 +119,8 @@ final class Bcrypt extends AbstractLock implements LockInterface
     public function verify(string $password, string $hash): bool
     {
         if (!$this->exceptions) {
-            return password_verify($password, $hash);
-        } elseif ($verified = password_verify($password, $hash)) {
+            return \password_verify($password, $hash);
+        } elseif ($verified = \password_verify($password, $hash)) {
             return (bool) $verified;
         } else {
             throw new Exception\PasswordNotVerifiedException('The password supplied is not verified.');
@@ -147,13 +140,13 @@ final class Bcrypt extends AbstractLock implements LockInterface
     public function needsRehash(string $hash): bool
     {
         if (!$this->exceptions) {
-            if ($result = is_pbkdf2($hash)) {
+            if ($result = \is_pbkdf2($hash)) {
                 return $result;
             }
-            return password_needs_rehash($hash, PASSWORD_BCRYPT, $this->options);
-        } elseif (is_pbkdf2($hash)) {
+            return \password_needs_rehash($hash, \PASSWORD_BCRYPT, $this->options);
+        } elseif (\is_pbkdf2($hash)) {
             throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
-        } elseif ($needsRehash = password_needs_rehash($hash, PASSWORD_BCRYPT, $this->options)) {
+        } elseif ($needsRehash = \password_needs_rehash($hash, \PASSWORD_BCRYPT, $this->options)) {
             throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
         } else {
             return (bool) $needsRehash;
