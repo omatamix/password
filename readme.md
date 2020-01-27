@@ -9,13 +9,14 @@
 
 ## Installation
 
-via Composer:
-
 The best way to install PasswordLock is through composer. If you do not have composer installed you can install it directly from the [composer website](https://getcomposer.org/). After composer is successfully installed run the command line code below.
 
 ```sh
 composer require commander-ant-screwbin-games/password-lock
 ```
+
+## Security Vulnerabilities
+If you discover a security vulnerability within Password Lock, please send an e-mail to Nicholas via [omatamix@gmail.com](mailto:omatamix@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## Contributing
 
