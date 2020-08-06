@@ -17,12 +17,11 @@ abstract class AbstractLock
             return [
                 'algo'     => \PASSWORD_PBKDF2,
                 'algoName' => 'pbkdf2',
-                'options'  => ['[%secret%]'],
+                'options'  => \null,
             ];
         }
         $info = \password_get_info($hash);
-        unset($info['options']);
-        $info['options'] = ['[%secret%]'];
+        $info['options'] = null;
         return $info;
     }
 }
