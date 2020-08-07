@@ -13,7 +13,6 @@ use PHPUnit\Framework\TestCase;
  */
 class Argon2iTest extends TestCase
 {
-
     /**
      * @return void Returns nothing.
      */
