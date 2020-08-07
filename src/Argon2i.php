@@ -4,6 +4,9 @@ namespace Omatamix\PasswordLock;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Hash the password using the argon2i algorithm.
+ */
 final class Argon2i extends AbstractLock implements LockInterface
 {
     /** @var array $options The argon2i hasher options. */
