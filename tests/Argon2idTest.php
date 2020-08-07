@@ -1,11 +1,10 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace PasswordLock\Test;
 
-use PasswordLock\Argon2id;
-use PasswordLock\Exception\PasswordNeedsRehashException;
-use PasswordLock\Exception\PasswordNotVerifiedException;
+use Omatamix\PasswordLock\Argon2id;
+use Omatamix\PasswordLock\Exception\PasswordNeedsRehashException;
+use Omatamix\PasswordLock\Exception\PasswordNotVerifiedException;
 
 use PHPUnit\Framework\TestCase;
 
