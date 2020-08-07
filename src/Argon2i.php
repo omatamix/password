@@ -59,7 +59,7 @@ final class Argon2i extends AbstractLock implements LockInterface
     {
         if (!$this->exceptions) {
             return \password_verify($password, $hash);
-        } elseif (!\password_verify($password, $hash)) {
+        } elseif (\password_verify($password, $hash)) {
             return \true;
         }
         throw new Exception\PasswordNotVerifiedException('The password supplied is not verified.');
