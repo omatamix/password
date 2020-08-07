@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace PasswordLock\Test;
+namespace Omatamix\PasswordLock\Test;
 
 use Omatamix\PasswordLock\Argon2id;
 use Omatamix\PasswordLock\Exception\PasswordNeedsRehashException;
