@@ -1,7 +1,7 @@
 {
-    "name": "commander-ant-screwbin-games/password-lock",
+    "name": "omatamix/password-lock",
     "description": "Secure your password using password lock.",
-    "homepage": "https://github.com/Commander-Ant-Screwbin-Games",
+    "homepage": "https://github.com/omatamix/password-lock",
     "keywords": [],
     "license": "MIT",
     "require": {
@@ -12,17 +12,17 @@
         "symfony/polyfill-php73": "^1.13"
     },
     "require-dev": {
-        "vimeo/psalm": "^3",
         "phpunit/phpunit": "^8.4"
     },
     "autoload": {
         "psr-4": {
-            "PasswordLock\\": "./src"
+            "Omatamix\\PasswordLock\\": "./src"
         },
         "files": [
             "./bootstrap.php"
         ]
     },
+    "test": "vendor/bin/phpunit"
     "config": {
         "optimize-autoloader": true
     },
