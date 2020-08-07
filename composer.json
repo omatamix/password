@@ -22,7 +22,9 @@
             "./bootstrap.php"
         ]
     },
-    "test": "vendor/bin/phpunit",
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
     "config": {
         "optimize-autoloader": true
     },
