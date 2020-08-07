@@ -1,11 +1,10 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
-namespace PasswordLock\Test;
+namespace Omatamix\PasswordLock\Test;
 
-use PasswordLock\Pbkdf2;
-use PasswordLock\Exception\PasswordNeedsRehashException;
-use PasswordLock\Exception\PasswordNotVerifiedException;
+use Omatamix\PasswordLock\Pbkdf2;
+use Omatamix\PasswordLock\Exception\PasswordNeedsRehashException;
+use Omatamix\PasswordLock\Exception\PasswordNotVerifiedException;
 
 use PHPUnit\Framework\TestCase;
 
@@ -14,7 +13,6 @@ use PHPUnit\Framework\TestCase;
  */
 class Pbkdf2Test extends TestCase
 {
-
     /**
      * @return void Returns nothing.
      */
