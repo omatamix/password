@@ -1,6 +1,10 @@
 # PasswordLock
 
 ![PHP Composer](https://github.com/omatamix/password-lock/workflows/PHP%20Composer/badge.svg)
+[![Version](https://poser.pugx.org/omatamix/password-lock/version)](//packagist.org/packages/omatamix/password-lock)
+[![Total Downloads](https://poser.pugx.org/omatamix/password-lock/downloads)](//packagist.org/packages/omatamix/password-lock)
+[![.gitattributes](https://poser.pugx.org/omatamix/password-lock/gitattributes)](//packagist.org/packages/omatamix/password-lock)
+[![composer.lock](https://poser.pugx.org/omatamix/password-lock/composerlock)](//packagist.org/packages/omatamix/password-lock)
 
 ## Installation
 
