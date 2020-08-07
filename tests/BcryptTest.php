@@ -1,12 +1,11 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace PasswordLock\Test;
 
-use PasswordLock\Bcrypt;
-use PasswordLock\Exception\PasswordInvalidException;
-use PasswordLock\Exception\PasswordNeedsRehashException;
-use PasswordLock\Exception\PasswordNotVerifiedException;
+use Omatamix\PasswordLock\Bcrypt;
+use Omatamix\PasswordLock\Exception\PasswordInvalidException;
+use Omatamix\PasswordLock\Exception\PasswordNeedsRehashException;
+use Omatamix\PasswordLock\Exception\PasswordNotVerifiedException;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Error\Error;
