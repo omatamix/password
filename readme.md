@@ -1,11 +1,6 @@
 # PasswordLock
 
-[![Build Status](https://travis-ci.org/Commander-Ant-Screwbin-Games/password-lock.svg?branch=master)](https://travis-ci.org/Commander-Ant-Screwbin-Games/password-lock)
-[![Latest Stable Version](https://poser.pugx.org/commander-ant-screwbin-games/password-lock/v/stable)](https://packagist.org/packages/commander-ant-screwbin-games/password-lock)
-[![Latest Unstable Version](https://poser.pugx.org/commander-ant-screwbin-games/password-lock/v/unstable)](https://packagist.org/packages/commander-ant-screwbin-games/password-lock)
-[![License](https://poser.pugx.org/commander-ant-screwbin-games/password-lock/license)](https://packagist.org/packages/commander-ant-screwbin-games/password-lock)
-[![Coverage Status](https://coveralls.io/repos/github/Commander-Ant-Screwbin-Games/password-lock/badge.svg?branch=master)](https://coveralls.io/github/Commander-Ant-Screwbin-Games/password-lock?branch=master)
-[![composer.lock](https://poser.pugx.org/commander-ant-screwbin-games/password-lock/composerlock)](https://packagist.org/packages/commander-ant-screwbin-games/password-lock)
+![PHP Composer](https://github.com/omatamix/password-lock/workflows/PHP%20Composer/badge.svg)
 
 ## Installation
 
