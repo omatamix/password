@@ -15,7 +15,6 @@ use PHPUnit\Framework\Error\Error;
  */
 class BcryptTest extends TestCase
 {
-
     /**
      * @return void Returns nothing.
      */
