@@ -1,13 +1,12 @@
-<?php
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
-namespace PasswordLock\Test;
+namespace Omatamix\PasswordLock\Test;
 
-use PasswordLock\Argon2i;
-use PasswordLock\Argon2id;
-use PasswordLock\Bcrypt;
-use PasswordLock\Exception\PasswordNeedsRehashException;
-use PasswordLock\Pbkdf2;
+use Omatamix\PasswordLock\Argon2i;
+use Omatamix\PasswordLock\Argon2id;
+use Omatamix\PasswordLock\Bcrypt;
+use Omatamix\PasswordLock\Exception\PasswordNeedsRehashException;
+use Omatamix\PasswordLock\Pbkdf2;
 
 use PHPUnit\Framework\TestCase;
 
@@ -16,7 +15,6 @@ use PHPUnit\Framework\TestCase;
  */
 class MixTest extends TestCase
 {
-
     /**
      * @return void Returns nothing.
      */
