@@ -87,7 +87,7 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
         $res = \hash_equals($testHash, $hash);
         if (!$this->exceptions) {
             return !(\is_pbkdf2($hash) && $res);
-        } elseif ($needsRehash = !(\is_pbkdf2($hash) && $res)) {
+        } elseif (!(\is_pbkdf2($hash) && $res)) {
             throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
         }
         return \false;
