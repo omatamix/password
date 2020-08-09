@@ -9,7 +9,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 final class Argon2id extends AbstractLock implements LockInterface
 {
-
     /** @var array $options The argon2id hasher options. */
     private $options = [];
 

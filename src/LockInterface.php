@@ -7,7 +7,6 @@ namespace Omatamix\PasswordLock;
  */
 interface LockInterface
 {
-
     /**
      * Construct a new hasher.
      *

@@ -21,7 +21,7 @@ abstract class AbstractLock
             ];
         }
         $info = \password_get_info($hash);
-        $info['options'] = null;
+        $info['options'] = \null;
         return $info;
     }
 }

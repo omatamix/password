@@ -9,7 +9,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 final class Pbkdf2 extends AbstractLock implements LockInterface
 {
-
     /** @var array $options The pbkdf2 hasher options. */
     private $options = [];
 

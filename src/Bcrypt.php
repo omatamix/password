@@ -9,7 +9,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 final class Bcrypt extends AbstractLock implements LockInterface
 {
-
     /** @var array $options The crypt blowfish hasher options. */
     private $options = [];
 
