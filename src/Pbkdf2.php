@@ -35,15 +35,11 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     /** @var array $options The pbkdf2 hasher options. */
     private $options = [];
 
-    /** @var bool $exceptions Should we utilize exceptions. */
-    protected $exceptions = \true;
-
     /**
      * {@inheritdoc}
      */
-    public function __construct(array $options = [], bool $exceptions = \true)
+    public function __construct(array $options = [])
     {
-        $this->setExceptions($exceptions);
         $this->setOptions($options);
     }
 
@@ -61,35 +57,17 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     /**
      * {@inheritdoc}
      */
-    public function setExceptions(bool $exceptions = \true): LockInterface
-    {
-        $this->exceptions = $exceptions;
-        return $this;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function compute(string $password): string
     {
-        return '$pbkdf2$' . \hash_pbkdf2($this->options['algo'], $password, $this->options['salt'], $this->options['iterations']);
+        return '$pbkdf2$' . hash_pbkdf2($this->options['algo'], $password, $this->options['salt'], $this->options['iterations']);
     }
 
     /**
      * {@inheritdoc}
-     *
-     * @throws Exception\PasswordNotVerifiedException If exceptions enabled throw this exception
-     *                                                if the password is not verified.
      */
     public function verify(string $password, string $hash): bool
     {
-        
-        if (\hash_equals($this->compute($password), $hash)) {
-            return \true;
-        } elseif ($this->exceptions) {
-            throw new Exception\PasswordNotVerifiedException('The password supplied is not verified.');
-        }
-        return \false;
+        return hash_equals($this->compute($password), $hash));
     }
 
     /**
@@ -98,21 +76,13 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
      * @param string $password The password for the hash.
      * @param string $hash     The hash to check.
      *
-     * @throws Exception\PasswordNeedsRehashException If exceptions enabled throw this exception
-     *                                                if the hash needs a rehash.
-     *
      * @return bool Returns true if the hash needs a rehash and false if not.
      */
     public function needsRehash(string $password, string $hash): bool
     {
         $testHash = $this->compute($password);
-        $res = \hash_equals($testHash, $hash);
-        if (!$this->exceptions) {
-            return !(\is_pbkdf2($hash) && $res);
-        } elseif (!(\is_pbkdf2($hash) && $res)) {
-            throw new Exception\PasswordNeedsRehashException('The hash supplied needs to be rehashed.');
-        }
-        return \false;
+        $res = hash_equals($testHash, $hash);
+        return !(is_pbkdf2($hash) && $res);
     }
 
     /**
