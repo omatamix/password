@@ -15,7 +15,7 @@ interface LockInterface
      *
      * @return void Returns nothing.
      */
-    public function __construct(array $options = [], bool $exceptions = \true);
+    public function __construct(array $options = []);
 
     /**
      * Set the hasher options.
@@ -25,15 +25,6 @@ interface LockInterface
      * @return \PasswordLock\LockInterface Returns the hasher.
      */
     public function setOptions(array $options = []): LockInterface;
-
-    /**
-     * Set the exceptions param.
-     *
-     * @param bool $exceptions Should we utilize exceptions.
-     *
-     * @return \PasswordLock\LockInterface Returns the hasher.
-     */
-    public function setExceptions(bool $exceptions = \true): LockInterface;
 
     /**
      * Compute a new hash.
@@ -49,9 +40,6 @@ interface LockInterface
      *
      * @param string $password The password to verify.
      * @param string $hash     The hash to verify against.
-     *
-     * @throws Exception\PasswordNotVerifiedException If exceptions enabled throw this exception
-     *                                                if the password is not verified.
      *
      * @return bool Returns true if the password is verified and false if not.
      */
