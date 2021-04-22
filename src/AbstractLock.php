@@ -2,6 +2,9 @@
 
 namespace Omatamix\PasswordLock;
 
+/**
+ * The abstract hasher.
+ */
 abstract class AbstractLock
 {
     /**
@@ -13,15 +16,15 @@ abstract class AbstractLock
      */
     public function getInfo(string $hash): array
     {
-        if (\is_pbkdf2($hash)) {
+        if (is_pbkdf2($hash)) {
             return [
-                'algo'     => \PASSWORD_PBKDF2,
+                'algo'     => PASSWORD_PBKDF2,
                 'algoName' => 'pbkdf2',
-                'options'  => \null,
+                'options'  => null,
             ];
         }
-        $info = \password_get_info($hash);
-        $info['options'] = \null;
+        $info = password_get_info($hash);
+        $info['options'] = null;
         return $info;
     }
 }
