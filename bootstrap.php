@@ -28,6 +28,8 @@ declare(strict_types=1);
 
 defined('PASSWORD_PBKDF2') || define('PASSWORD_PBKDF2', 5506);
 
+use Omatamix\Password\PasswordHasherInterface;
+
 if (!function_exists('isPbkdf2')) {
     function isPbkdf2(string $hash): bool
     {
@@ -35,3 +37,15 @@ if (!function_exists('isPbkdf2')) {
         return (bool) ($component == '$pbkdf2$');
     }
 }
+
+if (!function_exists('omatamixContainer')) {
+    throw new RuntimeException('Unable to locate a container.');
+}
+
+if (!function_exists('omatamixPassword')) {
+    function omatamixPassword(): PasswordHasherInterface
+    {
+        return omatamixContainer('passwordHasher');
+    }
+}
+
