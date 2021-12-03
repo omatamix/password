@@ -1,5 +1,5 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/8.4/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.0/phpunit.xsd"
          backupGlobals="true"
          backupStaticAttributes="false"
          bootstrap="./vendor/autoload.php"
@@ -21,7 +21,7 @@
          timeoutForLargeTests="15"
          verbose="false">
     <testsuites>
-        <testsuite name="PasswordLock Test Suite">
+        <testsuite name="Container Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
