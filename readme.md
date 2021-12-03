@@ -1,22 +1,18 @@
-# PasswordLock
+# Omatamix Password
 
-![PHP Composer](https://github.com/omatamix/password-lock/workflows/PHP%20Composer/badge.svg)
-[![Version](https://poser.pugx.org/omatamix/password-lock/version)](//packagist.org/packages/omatamix/password-lock)
-[![Total Downloads](https://poser.pugx.org/omatamix/password-lock/downloads)](//packagist.org/packages/omatamix/password-lock)
-[![.gitattributes](https://poser.pugx.org/omatamix/password-lock/gitattributes)](//packagist.org/packages/omatamix/password-lock)
-[![composer.lock](https://poser.pugx.org/omatamix/password-lock/composerlock)](//packagist.org/packages/omatamix/password-lock)
+[![Continuous Integration](https://github.com/omatamix/password/actions/workflows/php.yml/badge.svg)](https://github.com/omatamix/password/actions/workflows/php.yml)
 
 ## Installation
 
-The best way to install PasswordLock is through composer. If you do not have composer installed you can install it directly from the [composer website](https://getcomposer.org/). After composer is successfully installed run the command line code below.
+The best way to install this package is through composer. If you do not have composer installed you can install it directly from the [composer website](https://getcomposer.org/). After composer is successfully installed run the command line code below.
 
 ```sh
-composer require omatamix/password-lock
+composer require omatamix/password
 ```
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Password Lock, please send an e-mail to Nicholas via [omatamix@gmail.com](mailto:omatamix@gmail.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to Nicholas via [omatamix@gmail.com](mailto:omatamix@gmail.com). All security vulnerabilities will be promptly addressed.
 
 ## Contributing
 
