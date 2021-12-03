@@ -10,6 +10,7 @@
     },
     "require": {
         "php": "^8.0",
+        "omatamix/container": "v6.0",
         "symfony/options-resolver": "^5.1",
         "symfony/polyfill-mbstring": "^1.18"
     },
