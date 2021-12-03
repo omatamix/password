@@ -1,8 +1,10 @@
 <?php declare(strict_types=1);
 /**
+ * Omatamix Password
+ *
  * MIT License
  * 
- * Copyright (c) 2021 Nicholas English
+ * Copyright (c) 2022 Nicholas English
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,18 +25,17 @@
  * SOFTWARE.
  */
 
-namespace Omatamix\PasswordLock;
+namespace Omatamix\Password;
 
 /**
  * The hasher interface.
  */
-interface LockInterface
+interface PasswordHasherInterface
 {
     /**
      * Construct a new hasher.
      *
-     * @param array $options    The hasher options.
-     * @param bool  $exceptions Should we utilize exceptions.
+     * @param array $options The hasher options.
      *
      * @return void Returns nothing.
      */
@@ -45,7 +46,7 @@ interface LockInterface
      *
      * @param array $options The hasher options.
      *
-     * @return \PasswordLock\LockInterface Returns the hasher.
+     * @return \Omatamix\Password\PasswordHasherInterface Returns the hasher.
      */
     public function setOptions(array $options = []): LockInterface;
 
