@@ -1,24 +1,28 @@
 {
-    "name": "omatamix/password-lock",
-    "description": "Secure your password using password lock.",
-    "homepage": "https://github.com/omatamix/password-lock",
+    "name": "omatamix/password",
+    "description": "Secure your passwords.",
+    "homepage": "https://github.com/omatamix/password",
     "keywords": [],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/omatamix/password/issues",
+        "source": "https://github.com/omatamix/password"
+    },
     "require": {
-        "php": ">=7.3",
+        "php": "^8.0",
         "symfony/options-resolver": "^5.1",
         "symfony/polyfill-mbstring": "^1.18"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^9"
-    },
     "autoload": {
         "psr-4": {
-            "Omatamix\\PasswordLock\\": "./src"
+            "Omatamix\\Password\\": "./src"
         },
         "files": [
             "./bootstrap.php"
         ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
@@ -26,5 +30,6 @@
     "config": {
         "optimize-autoloader": true
     },
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
