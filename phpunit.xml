@@ -21,7 +21,7 @@
          timeoutForLargeTests="15"
          verbose="false">
     <testsuites>
-        <testsuite name="Container Test Suite">
+        <testsuite name="Password Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
