@@ -48,7 +48,7 @@ interface PasswordHasherInterface
      *
      * @return \Omatamix\Password\PasswordHasherInterface Returns the hasher.
      */
-    public function setOptions(array $options = []): LockInterface;
+    public function setOptions(array $options = []): PasswordHasherInterface;
 
     /**
      * Compute a new hash.
