@@ -1,8 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 /**
+ * Omatamix Password
+ *
  * MIT License
  * 
- * Copyright (c) 2021 Nicholas English
+ * Copyright (c) 2022 Nicholas English
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,20 +26,21 @@
  * SOFTWARE.
  */
 
-namespace Omatamix\PasswordLock;
+namespace Omatamix\Password;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-/**
- * Hash the password using the pbkdf2 algorithm.
- */
-final class Pbkdf2 extends AbstractLock implements LockInterface
+final class Pbkdf2 extends AbstractPasswordHasher implements PasswordHasherInterface
 {
     /** @var array $options The pbkdf2 hasher options. */
     private $options = [];
 
     /**
-     * {@inheritdoc}
+     * Construct a new hasher.
+     *
+     * @param array $options The hasher options.
+     *
+     * @return void Returns nothing.
      */
     public function __construct(array $options = [])
     {
@@ -44,9 +48,13 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Set the hasher options.
+     *
+     * @param array $options The hasher options.
+     *
+     * @return \Omatamix\Password\PasswordHasherInterface Returns the hasher.
      */
-    public function setOptions(array $options = []): LockInterface
+    public function setOptions(array $options = []): PasswordHasherInterface
     {
         $resolver = new OptionsResolver();
         $this->configureOptions($resolver);
@@ -55,7 +63,11 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Compute a new hash.
+     *
+     * @param string $password The password to hash.
+     *
+     * @return string Returns the password hashed.
      */
     public function compute(string $password): string
     {
@@ -63,7 +75,12 @@ final class Pbkdf2 extends AbstractLock implements LockInterface
     }
 
     /**
-     * {@inheritdoc}
+     * Verify the password matches the given hash.
+     *
+     * @param string $password The password to verify.
+     * @param string $hash     The hash to verify against.
+     *
+     * @return bool Returns true if the password is verified and false if not.
      */
     public function verify(string $password, string $hash): bool
     {
