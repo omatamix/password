@@ -28,9 +28,6 @@ declare(strict_types=1);
 
 namespace Omatamix\Password;
 
-/**
- * The hasher interface.
- */
 interface PasswordHasherInterface
 {
     /**
