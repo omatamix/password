@@ -96,7 +96,7 @@ final class Argon2id extends AbstractPasswordHasher implements PasswordHasherInt
      */
     public function needsRehash(string $hash): bool
     {
-        return is_pbkdf2($hash) ? true : password_needs_rehash($hash, PASSWORD_ARGON2ID, $this->options);
+        return \is_pbkdf2($hash) ? true : password_needs_rehash($hash, PASSWORD_ARGON2ID, $this->options);
     }
 
     /**
