@@ -101,7 +101,7 @@ final class Bcrypt extends AbstractPasswordHasher implements PasswordHasherInter
      */
     public function needsRehash(string $hash): bool
     {
-        return is_pbkdf2($hash) ? true : password_needs_rehash($hash, PASSWORD_BCRYPT, $this->options);
+        return \is_pbkdf2($hash) ? true : password_needs_rehash($hash, PASSWORD_BCRYPT, $this->options);
     }
 
     /**
