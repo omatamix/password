@@ -1,8 +1,11 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 /**
+ * Omatamix Password
+ *
  * MIT License
  * 
- * Copyright (c) 2021 Nicholas English
+ * Copyright (c) 2022 Nicholas English
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,12 +26,12 @@
  * SOFTWARE.
  */
 
-namespace Omatamix\PasswordLock;
+namespace Omatamix\Password;
 
 /**
  * The abstract hasher.
  */
-abstract class AbstractLock
+abstract class AbstractPasswordHasher
 {
     /**
      * Get informtion on a hash.
