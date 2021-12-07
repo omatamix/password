@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 /**
- * Omatamix Container
+ * Omatamix Password
  *
  * MIT License
  * 
