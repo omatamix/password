@@ -28,7 +28,7 @@ declare(strict_types=1);
 
 namespace Omatamix\Password\Test;
 
-use Omatamix\PasswordLock\Pbkdf2;
+use Omatamix\Password\Pbkdf2;
 use PHPUnit\Framework\TestCase;
 
 class Pbkdf2Test extends TestCase
