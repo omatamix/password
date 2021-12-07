@@ -84,7 +84,7 @@ final class Pbkdf2 extends AbstractPasswordHasher implements PasswordHasherInter
      */
     public function verify(string $password, string $hash): bool
     {
-        return hash_equals($this->compute($password), $hash));
+        return hash_equals($this->compute($password), $hash);
     }
 
     /**
