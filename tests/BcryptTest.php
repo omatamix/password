@@ -32,9 +32,6 @@ use Omatamix\Bcrypt;
 use Omatamix\Exception\PasswordInvalidException;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Test bcrypt functionality.
- */
 class BcryptTest extends TestCase
 {
     /**
