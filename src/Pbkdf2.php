@@ -99,7 +99,7 @@ final class Pbkdf2 extends AbstractPasswordHasher implements PasswordHasherInter
     {
         $testHash = $this->compute($password);
         $res = hash_equals($testHash, $hash);
-        return !(is_pbkdf2($hash) && $res);
+        return !(\is_pbkdf2($hash) && $res);
     }
 
     /**
