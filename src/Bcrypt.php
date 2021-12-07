@@ -54,7 +54,7 @@ final class Bcrypt extends AbstractPasswordHasher implements PasswordHasherInter
      *
      * @return \Omatamix\Password\PasswordHasherInterface Returns the hasher.
      */
-    public function setOptions(array $options = []): LockInterface
+    public function setOptions(array $options = []): PasswordHasherInterface
     {
         $resolver = new OptionsResolver();
         $this->configureOptions($resolver);
