@@ -32,9 +32,6 @@ use Omatamix\Password\Bcrypt;
 use Omatamix\Password\Pbkdf2;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Test the lock abstraction.
- */
 class LockTest extends TestCase
 {
     /**
