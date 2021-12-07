@@ -30,8 +30,8 @@ defined('PASSWORD_PBKDF2') || define('PASSWORD_PBKDF2', 5506);
 
 use Omatamix\Password\PasswordHasherInterface;
 
-if (!function_exists('isPbkdf2')) {
-    function isPbkdf2(string $hash): bool
+if (!function_exists('is_pbkdf2')) {
+    function is_pbkdf2(string $hash): bool
     {
         $component = substr($hash, 0, 8);
         return (bool) ($component == '$pbkdf2$');
