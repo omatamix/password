@@ -28,8 +28,8 @@ declare(strict_types=1);
 
 namespace Omatamix\Password\Test;
 
-use Omatamix\Bcrypt;
-use Omatamix\Exception\PasswordInvalidException;
+use Omatamix\Password\Bcrypt;
+use Omatamix\Password\Exception\PasswordInvalidException;
 use PHPUnit\Framework\TestCase;
 
 class BcryptTest extends TestCase
