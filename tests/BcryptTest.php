@@ -85,15 +85,4 @@ class BcryptTest extends TestCase
         $bcrypt = new Bcrypt($options);
         $hash = $bcrypt->compute('WWEPt2AEjqqM?DeSV&SXcU=t*^D5Bte#E*R8c3-_kq!bBU$ahjgJFL+Q=2gG?#QqkwzS?qwbs');
     }
-
-    /**
-     * @return void Returns nothing.
-     */
-    public function testBcryptHashInvalidPasswordError(): void
-    {
-        $this->expectError();
-        $options = ['cost' => 10];
-        $bcrypt = new Bcrypt($options, \false);
-        $hash = $bcrypt->compute('WWEPt2AEjqqM?DeSV&SXcU=t*^D5Bte#E*R8c3-_kq!bBU$ahjgJFL+Q=2gG?#QqkwzS?qwbs');
-    }
 }
