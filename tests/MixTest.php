@@ -34,9 +34,6 @@ use Omatamix\Password\Bcrypt;
 use Omatamix\Password\Pbkdf2;
 use PHPUnit\Framework\TestCase;
 
-/**
- * Test mix functionality.
- */
 class MixTest extends TestCase
 {
     /**
